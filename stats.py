@@ -26,6 +26,15 @@ def char_count(filepath):
             letter_count[character] = 1
     return letter_count
 
+def report(filepath, word_count, letter_count):
+    letter_count = dict(sorted(letter_count.items(),key= lambda item: item[1], reverse=True))
+    print("============ BOOKBOT ============")
+    print(f"Analyzing books found at {filepath}")
+    print("------------Word Count------------")
+    print(f"Found {word_count} total words")
+    print("---------Character Count----------")
+    for key,value in letter_count.items():
+        print(f"{key}: {value}")
 
 
 """Count Characters
